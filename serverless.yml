@@ -6,11 +6,19 @@
 
 # The `service` block is the name of the service
 service: serverless-aws-typescript-barebones
+useDotenv: true
 
 # The `provider` block defines where your service will be deployed
 provider:
   name: aws
   runtime: nodejs12.x
+  # region: us-east-1
+  apiGateway:
+    shouldStartNameWithService: true
+
+package:
+  exclude:
+    - src/**
 
 # The `functions` block defines what code to deploy
 functions:

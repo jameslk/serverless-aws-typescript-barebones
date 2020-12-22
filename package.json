@@ -16,13 +16,17 @@
     "typescript": "^3.9.7"
   },
   "scripts": {
+    "start": "docker-compose up",
     "build": "tsc",
     "watch:ts": "tsc -w",
     "watch:prettier": "onchange 'src/**/*.ts' -- prettier --write {{changed}}",
+    "watch:docker": "docker-compose up",
     "watch": "npm-run-all --parallel watch:*",
     "sls": "serverless",
-    "deploy": "yarn build && sls deploy",
-    "invoke": "sls invoke local -f",
+    "deploy:dev": "yarn build && sls deploy --stage dev",
+    "deploy:prod": "yarn build && sls deploy --stage prod",
+    "invoke:local": "sls invoke local -f",
+    "invoke:remote": "sls invoke -f",
     "debug": "ndb sls invoke local -f"
   }
 }

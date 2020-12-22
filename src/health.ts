@@ -1,14 +1,6 @@
-import {
-    APIGatewayProxyEvent,
-    APIGatewayProxyCallback,
-    APIGatewayProxyHandler,
-} from 'aws-lambda';
+import {Handler} from 'aws-lambda';
 
-export const handler: APIGatewayProxyHandler = async function (
-    event: APIGatewayProxyEvent,
-    context: any,
-    callback: APIGatewayProxyCallback
-) {
+export const handler: Handler = async function (event, context, callback) {
     return {
         statusCode: 200,
         body: 'online',

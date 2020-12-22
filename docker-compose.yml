@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  health:
+    image: lambci/lambda:nodejs12.x
+    ports:
+      - "9001:9001"
+    volumes:
+      - .:/var/task:ro,delegated
+    command: dist/health
+    # env_file: ./.env
+    environment: 
+      - DOCKER_LAMBDA_STAY_OPEN=1
+      - DOCKER_LAMBDA_WATCH=1

@@ -1,7 +1,36 @@
 # Serverless AWS TypeScript Barebones
 
 This is a barebones project I ripped out of an existing project to use as a template for future Serverless
-projects. My notes on how I set this up are below.
+projects.
+
+## Usage
+
+Watch for changes and run locally:
+```bash
+$ yarn watch
+```
+
+Deploy:
+```bash
+# Deploy to development environment
+$ yarn deploy:dev
+
+# Deploy to production
+$ yarn deploy:prod
+```
+
+To invoke a command via HTTP:
+```
+POST http://localhost:9001/2015-03-31/functions/function/invocations
+
+With JSON body:
+{
+    ...
+}
+```
+
+## References
+My notes on how I set this up are below.
 
 * Quick start tutorial
     * https://stackify.com/aws-lambda-with-node-js-a-complete-getting-started-guide/
@@ -27,5 +56,7 @@ projects. My notes on how I set this up are below.
 * Lambda Runtimes
     * https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html
     * https://blog.thundra.io/aws-lambda-limits-to-keep-in-mind-when-developing-a-serverless-application
+* Docker Lambda
+    * https://github.com/lambci/docker-lambda
 * Technical limitations
 https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html
