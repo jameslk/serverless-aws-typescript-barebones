@@ -23,7 +23,7 @@ package:
 # The `functions` block defines what code to deploy
 functions:
   health:
-    handler: dist/server/health.handler
+    handler: dist/health.handler
     events:
       - http:
           path: health
